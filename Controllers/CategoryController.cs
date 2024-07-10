@@ -4,7 +4,7 @@ using PokemonApp.Dto;
 using PokemonApp.Interfaces;
 using PokemonApp.Models;
 
-namespace PokemonReviewApp.Controllers
+namespace PokemonApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
