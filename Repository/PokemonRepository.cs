@@ -25,18 +25,18 @@ namespace PokemonApp.Repository
         {
             return _context.Pokemon.Where(p => p.Name == name).FirstOrDefault();
         }
-        public decimal GetPokemonRating(int pokeId)
+        public decimal GetPokemonRating(int pokemonId)
         {
-            var review = _context.Reviews.Where(p => p.Pokemon.Id == pokeId);
+            var review = _context.Reviews.Where(p => p.Pokemon.Id == pokemonId);
 
             if (review.Count() <= 0)
                 return 0;
 
             return ((decimal)review.Sum(r => r.Rating) / review.Count());
         }
-        public bool PokemonExists(int pokeId)
+        public bool PokemonExists(int pokemonId)
         {
-            return _context.Pokemon.Any(p => p.Id == pokeId);
+            return _context.Pokemon.Any(p => p.Id == pokemonId);
         }
     }
 }

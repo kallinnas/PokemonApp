@@ -59,7 +59,7 @@ namespace PokemonApp
                             },
                             Reviews = new List<Review>()
                             {
-                                new Review { Title= "Squirtle", Text = "squirtle is the best pokemon, because it is electric", Rating = 5,
+                                new Review { Title= "Squirtle", Text = "squirtle is the best pokemon, because it is Water pokemon", Rating = 5,
                                 Reviewer = new Reviewer(){ FirstName = "Teddy", LastName = "Smith" } },
                                 new Review { Title= "Squirtle",Text = "Squirtle is the best a killing rocks", Rating = 5,
                                 Reviewer = new Reviewer(){ FirstName = "Taylor", LastName = "Jones" } },
@@ -90,7 +90,7 @@ namespace PokemonApp
                             },
                             Reviews = new List<Review>()
                             {
-                                new Review { Title="Veasaur",Text = "Venasuar is the best pokemon, because it is electric", Rating = 5,
+                                new Review { Title="Veasaur",Text = "Venasuar is the best pokemon, because it is Leaf pokemon", Rating = 5,
                                 Reviewer = new Reviewer(){ FirstName = "Teddy", LastName = "Smith" } },
                                 new Review { Title="Veasaur",Text = "Venasuar is the best a killing rocks", Rating = 5,
                                 Reviewer = new Reviewer(){ FirstName = "Taylor", LastName = "Jones" } },

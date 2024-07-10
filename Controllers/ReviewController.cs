@@ -54,12 +54,12 @@ namespace PokemonApp.Controllers
             return Ok(review);
         }
 
-        [HttpGet("pokemon/{pokeId}")]
+        [HttpGet("pokemon/{pokemonId}")]
         [ProducesResponseType(200, Type = typeof(Review))]
         [ProducesResponseType(400)]
-        public IActionResult GetReviewsForAPokemon(int pokeId)
+        public IActionResult GetReviewsForAPokemon(int pokemonId)
         {
-            var reviews = _mapper.Map<List<ReviewDto>>(_reviewRepository.GetReviewsOfAPokemon(pokeId));
+            var reviews = _mapper.Map<List<ReviewDto>>(_reviewRepository.GetReviewsOfAPokemon(pokemonId));
 
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -70,7 +70,7 @@ namespace PokemonApp.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateReview([FromQuery] int reviewerId, [FromQuery]int pokeId, [FromBody] ReviewDto reviewCreate)
+        public IActionResult CreateReview([FromQuery] int reviewerId, [FromQuery]int pokemonId, [FromBody] ReviewDto reviewCreate)
         {
             if (reviewCreate == null)
                 return BadRequest(ModelState);
@@ -90,7 +90,7 @@ namespace PokemonApp.Controllers
 
             var reviewMap = _mapper.Map<Review>(reviewCreate);
 
-            reviewMap.Pokemon = _pokemonRepository.GetPokemon(pokeId);
+            reviewMap.Pokemon = _pokemonRepository.GetPokemon(pokemonId);
             reviewMap.Reviewer = _reviewerRepository.GetReviewer(reviewerId);
             
 
