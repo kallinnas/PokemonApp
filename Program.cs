@@ -17,6 +17,9 @@ var builder = WebApplication.CreateBuilder(args);
 //                   : Update-Database
 // 7) PowerShell: cd PokemonApp
 //              : dotnet run seeddata
+// 8) After adding controllers to let return obj with joined data add to Program.cs:
+//  builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// 9) NuGet: AutoMapping & MappingDepInj
 
 
 
@@ -24,6 +27,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddTransient<Seed>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
