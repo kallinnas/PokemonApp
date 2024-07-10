@@ -1,7 +1,7 @@
-﻿using PokemonReviewApp.Data;
-using PokemonReviewApp.Models;
+﻿using PokemonApp.Data;
+using PokemonApp.Models;
 
-namespace PokemonReviewApp
+namespace PokemonApp
 {
     public class Seed
     {
